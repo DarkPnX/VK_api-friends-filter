@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Friends VK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.js" type="text/javascript"></script>
+    <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+</head>
+<body>
+<div class="main">
+    <div class="Vk_window">
+        <div class="h1">Выберите друзей</div>
+        <div class="cont_input">
+
+                <i class="fas fa-search"></i>
+                <input id="left_search" data-nameSearch="left_list" placeholder="Начните вводить имя друга" value="">
+
+        </div>
+        <div class="cont_input">
+
+                <i class="fas fa-search"></i>
+                <input id="right_search" data-nameSearch="right_list" placeholder="Начните вводить имя друга" value="">
+
+        </div>
+        <div class="left_list_friends">
+            <div>
+                Ваши друзья
+            </div>
+            <div id="left_list">
+
+            </div>
+        </div>
+        <div class="right_list_friends">
+            <div>
+                Друзья в списке
+            </div>
+            <div id="right_list">
+
+            </div>
+        </div>
+        <div class="bottom">
+            <span class="save">
+                сохранить
+            </span>
+        </div>
+    </div>
+</div>
+<script id="one_fr" type="text/x-handlebars-template">
+    {{#each items}}
+    <div class="container_fr" draggable="true">
+        <div class="ava_fr">
+            <img src="{{photo_50}}">
+        </div>
+        <div class="name_fr">
+            <div>{{first_name}} {{last_name}}</div>
+        </div>
+        <div class="cont_btn">
+            <div class="btn_action"><i class="fas fa-plus"></i></div>
+        </div>
+    </div>
+    {{/each}}
+</script>
+
+    
+    <script src="model.js"></script>
+    <script src="view.js"></script>
+    <script src="controller.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
